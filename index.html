@@ -14,7 +14,11 @@
   <script>
 
   // initialize the map
-  var map = L.map('map').setView([42.35, -71.08], 13);
+  var map = L.map('map').setView([42.35, -71.08], 13);  // create a map variable
+  // Use L.map() to initialize the map object, passing it the id of the div where we
+  // want the map to go
+  // Use the setView() method to center the intial map view on Boston (latitude 42.35,
+  // longitude -71.08, and zoom level 13)
 
   // load a tile layer
   L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
@@ -23,6 +27,14 @@
       maxZoom: 17,
       minZoom: 9
     }).addTo(map);
+
+    // Used L.tileLayer() to create a base layer of map tiles, specificying a URL template for the tile images.
+    // In this case we're using MAPC's basemap, but there are many options out there.
+    // {z}/{x}/{y} is a template that Leaflet uses to find tiles at the correct zoom, x, and y coordinates.
+    // We also specified a few options:
+    // Attribution text to appea in the corner. Always properly attribute your map data! Certain zoom range.
+    // These options prevent the user from zooming beyond that range and seeing a blank map.
+    // Used the addTo() method to add this tile layer to the map we just created
 
   </script>
 </body>
